@@ -1,0 +1,28 @@
+XNode 폴더를 root로 보고 실행할 코드가 있는 파일을 실행해줘야 한다.
+XNode\lib 안에서 실행하면 실행이 안된다.
+
+xnode scan
+xnode -p com3 ls /flash
+xnode -p com3 ls /flash/lib
+xnode -p com3 put lib
+xnode -p com3 ls /flash/lib
+xnode -p com3 rm /flash/lib/core_a.py
+xnode -p com3 run app.py
+xnode -p com3 put app.py /flash/main.py
+
+#xnode -p com3 rm /flash/main.py
+#xnode -p com3 put core_battery_range.py /flash/main.py
+
+- xnode 폴더에 D:\XNode1\Library\CORE의 lib폴더랑 app.py파일 복사
+- xnode -p com3 ls /flash/lib로 라이브러리가 있는지 확인
+- xnode -p com3 put lib 라이브러리 넣기
+- xnode -p com3 ls /flash/lib 라이브러리 들어갔나 확인하기
+- xnode -p com3 run app.py 로 실행하기
+
+
+xnode -p com3 run core_led_loop.py
+
+putty
+com3, 115200
+
+알트 + 쉬프트 + 드래그 하면 여러행의  컬럼부를 한번에 지울수 있음

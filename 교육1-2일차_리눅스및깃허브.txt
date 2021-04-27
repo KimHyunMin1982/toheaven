@@ -1,0 +1,204 @@
+https://www.44bits.io/ko/post/wsl2-install-and-basic-usage#wsl2%EC%97%90%EC%84%9C-%EC%9A%B0%EB%B6%84%ED%88%ACubuntu-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0
+
+https://www.microsoft.com/ko-kr/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab
+
+1일차
+wls2 설치 및 우분투 20.04LTS설치
+파이썬 3.8설치
+파이썬소스코드실행
+windows powershell
+
+2일차
+cd로 홈디렉터리 이동후 작업해야함
+pwd로검색
+microsoft store에서 아래 구매
+windows terminal preview 설치
+마소 엣지검색엔진이 크롬라이브러리를씀
+터미널 파워셀 설정
+시작-우분투
+색구성표 등 편한설정 셋팅
+rm -rf ??f*
+?=상관없다.
+*=모든것
+정규식
+rm -rf ?[a-c, F-K]?f*
+cli-명령어라인인터페이스-명령어해석기-shell프로그램(bash등)
+echo "hello world" > first.md
+cd /mnt/c/Users/PC-24
+cd
+pwd
+rm -fr *
+디렉터리를 모두 조용히 삭제하라
+force recursive
+touch a.txt b.txt c.txt
+ls
+rm -rf *.txt
+쉘은 표준입력과 표준출력만함 - 커널에서 연결해줌 - 키보드, 모니터등
+도스창
+파워쉘
+윈도우터미널은 표준 입출력장치이다.
+echo "Hello World!"
+뒤에 문자를 표준출력해줌. 루프백.
+cli - 표준입출력기반프로그램
+
+echo "Hello World!" > 파이프(표준출력을 파일에 보냄)
+echo "# Hello World!" > first.md
+
+>> append 추가하기
+echo "## Hi Python" >> first.md
+
+cat first.md
+파일안의 내용을 표준출력으로 나타냄
+
+ls -l /etc
+ls -l /etc > etc_list 파이프 검색한 etc밑의 목록을 파일에 보냄
+grep host etc_list : 파일내에서 지정한 패턴이나 문자열을 찾은 후에 그 패턴을 포함하고 있는 모든 행을 표준출력해준다.
+host를 포함한 모든행을 표준출력함
+-rw-r--r--
+루트사용자는 읽고쓰고, 루트그룹은 읽기만하고, 기타그룹은 읽기만 가능하다.
+sudo vi /etc/hostname
+루트로 변경하여 vi편집기로 etc밑의 hostname파일을 연다.
+리부팅하면 user@DESKTOP-NHH9JBO:~$ 의 호스트네임이 Linux로 바뀐다.
+리부팅을해야 적용됨
+
+ls -l /etc | grep host
+|은 파이프
+ls -l /etc | grep host | wc -l 
+wc는 줄수를 구하는 프로그램
+ls -l /etc | grep host | wc -l > host_count
+ls
+cat host_count
+ls -l
+total 16 -> 블럭사이즈
+ls -s
+ls -s --block-size=4096
+16짜리가 4로바뀜
+윈도우즈와 리눅스의 블록사이즈가 다름
+포맷시 블럭단위 설정가능함-파일복사시블록단위로 복사됨
+default-4096-4k?
+total 16 이면 4096보다 블록단위가 작다.
+블록을 어떻게 잡느냐에따라 파일을 읽고쓰는 성능이 달라진다.
+구글링-마크업랭귀지검색
+git 가입후 저장소 생성 toheaven
+프로젝트생성
+파워쉘에서 git에 연결하기
+git 기본적으로 git가 설치되어 있다???
+git config --global user.name KimHyunMin1982
+git config --global user.email ledzep144@naver.com
+git config --global color.ui "auto"
+git init
+.git를 삭제하면 안됨
+git status
+git push 저장소에 올림 - 한개또는 여러개 등 제어할수있음
+git add
+git rollback
+현재 wls는 버전1
+버전2로 업그레이드시 커널업그레이드 필요함
+rm -rf .* 숨겨진모든것을 삭제한다.
+cd /toheaven
+echo "# Git Test" > readme.md  여기서 md는 마크다운
+mkdir res
+ls -l
+git add 파일명
+고칠때마다 추가함
+git add .
+모든파일내용을 저장해라
+git add readme.md
+git commit -m "create project"
+add는 파일, commit는 전체파일
+echo로 파일내용추가
+toheaven폴더에서 git remote add origin https://github.com/KimHyunMin1982/toheaven.git 외부깃저장소에연결
+git push origin +master 메인이 연결이 안되기때문에 마스터를 추가해준다.
+메인과 브랜치(알파, 베타 버전 파일)를 합치면 최종버전이 된다.
+add commit
+git commit.
+git commit -m 메세지(first commit)
+윈도우즈 파워쉘에서 변경
+wsl1에서 wsl2로 변경
+wsl2 리눅스 커널 업데이트 패키지 설치후
+wsl1런닝 종료 후
+wsl2로 변경
+wsl --set-version Ubuntu-20.04 2
+wsl -l -v
+echo "first bash"
+bash
+sudo apt install zsh 제트쉘설치
+제트쉘로 변경
+chsh -s /bin/zsh
+google에서 oh my zshell검색하여 깃허브에서 curl 커맨드 복사후 실행
+oh my zshell 플러그인 검색하여 맞는것 다운로드
+zshell에서는 탭키를 이용하여 자동완성할수있다.
+
+장비 IP
+192.168.101.101
+그룹
+192.168.101
+PC번호
+101
+cd - 하면 경로선택할수있는 기능
+
+pc에서 네트워크
+이더넷
+어댑터 옵션 변경
+어댑터2 속성
+인터넷 프로토콜 버전 4(TCP/IPv4)
+192.168.101.120
+
+파워쉘에서 ping 192.168.101.101
+크로스케이블 통신 확인 완료
+ssh soda@192.168.101.101
+ssh는 putty같은 윈도우즈 자체 클라이언트 접속프로그램
+계정명 soda 비밀번호 soda
+
+root/home/soda
+루트/홈/계정명
+
+ctrl+b
+ctrl+d
+문자가 깨끗하게 보임
+
+tmux라는 프로그램이 자동으로 실행됨
+zshell, oh my zshell, tmux를 개발자들이 자주씀
+미리 스터디
+
+pwd 홈디렉터리 파악
+oh my zshell 플러그인설치
+
+윈도우운영체제기능
+랜카드 두개를 허브처럼 만들거나 공유기처럼 만들수 있음
+그럼 크로스케이블로 연결된 장비도 인터넷에 연결되어
+gittest를 할수 있음
+
+웹부라우저 주소에 192.168.101.101:8888
+주피터노트북을 개선한 주피터 랩, 구글은 주피터허브에 접속함
+주피터랩
+비밀번호는 soda
+터미널선택 후 ctrl+b, ctrl+d
+터미널끄고 python에 명령어 입력하면 장비를 제어할수있음
+
+단계별로 실행
+from pop import Leds
+leds = Leds()
+leds[0].on()
+leds[7].on()
+센서제어시 슈미트트리거 사용
+on/off를 잡으려면 슈미트트리거 사용
+펄스가 튀는 걸 잡음 회로에서 잡거나 슈미트트리거사용
+
+리눅스터미널
+웹에서 powerlevel10k 검색
+wsl에서 powerlevel10k테마 적용
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
+vi .zshrc
+11번라인
+"powerlevel10k/powerlevel10k"로 수정
+
+wsl2 export
+wsl2 import
+다른피씨에 이미지 복사
+
+https://pop-docs.readthedocs.io/en/latest/pop/
+
+https://velog.io/@ruddms936/zsh-%EC%84%A4%EC%B9%98
+
+https://medium.com/codealpha/windows-z-shell-949b81d3fe51

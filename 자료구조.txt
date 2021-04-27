@@ -1,0 +1,7 @@
+자료:data => 저장공간(memory) + 읽기 , 쓰기, 삽입, 삭제, 탐색
+
+1. 변수(variable) a = 5
+2. 배열(Array) : 리스트(List)
+    a = [3, -1, 7, 5], index
+    a.append(), a.insert(index, data)
+    a.pop(), a.pop(index)

@@ -1,0 +1,62 @@
+#0. 개발환경 설치 및 환경 설정
+https://www.anconda.com/distribution/#download-section
+이전버전 다운로드 텍스트마이닝을 위해 3.6버전 다운로드
+
+Anaconda3 폴더
+python3 폴더 => install / source /study(data)
+
+archive file에서 아래의 파일 검색 후 설치
+Anaconda2-2019.03-Windows-x86_64.exe
+Anaconda3-2019.03-Windows-x86_64.exe
+
+#1. 환경변수 path
+- C:\Anaconda3
+- C:\Anaconda3\scripts
+- C:\Anconda3\library\bin
+
+시스템-고급설정-환경변수창
+PC-24 는 저스트미 혼자쓰는 계정일때 환경변수설정
+시스템변수-올유저 계정일때 쓰는 환경 변수 설정
+
+#2.주피터 노트북에서 작성된 파일이 저장될 공간 설정하는 방법
+-python3 폴더안에 source에 저장 공간으로 설정하는 작업
+
+C:\Anaconda3\python.exe C:\Anaconda3\cwp.py C:\Anaconda3 C:\Anaconda3\python.exe 
+C:\Anaconda3\Scripts\jupyter-notebook-script.py 
+"%D:\Python3\Source%/" 이대로하면 안됨
+"D:\Python3\Source/" 이대로하면 됨
+
+-windows10 버전부터 보안성을 중시하는 문제가 발생하므로 항상
+관리자 권한으로 실행을 수행해야 한다.
+호환성에서 관리자 권한으로 실행을 체크
+
+파이썬교육 2일차 4/2일 금요일
++, -, *, /(실수몫), //(정수몫), %(나머지)
+
+0.형변환 : 큰 데이터를 작은공간에 담고자할 때
+-강제형변환(명시적형변환, casting)
+-자동형변환(묵시적형변환, promotion)
+-int(), float()
+
+교육3일차 04/05
+#0. C, C++, JAVA 기타언어들
+for(초기식;조건식;증감식){
+	반복할 문장;
+}
+
+초기식;
+while 조건식{
+	반복할 문장;
+	증감식;
+}
+
+for(i=1; i<=5; i++)
+	print(i);
+}
+
+i = 1
+while(i <= 5){
+	print(i);
+	i++;
+}
+

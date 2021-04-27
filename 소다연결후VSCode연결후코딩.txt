@@ -1,0 +1,112 @@
+물리적연결
+soda에 이더넷연결
+
+주소설정해야됨
+실습장비는 주소가 고정되어있음
+192.168.101.101
+
+연결된 이더넷 pc의 주소를 192.168.101.120으로 변경
+192.168.101.여기를 설정(101은 실습장비주소임) 실습장비-타겟
+
+ping test
+ping 192.168.101.101
+빠르면 1ms 이내
+보통 10ms 이내
+
+실습장비-타겟-ssh서버가 들어있음 (맥북에는 애플서버가 들어있음)(윈도우운영체제는 없음)
+맥북은 리눅스랑 비슷함
+
+실습장비는 리눅스서버가 돌아가고있음
+개발할때는 ssh를 씀 - 시큐어 서비스를 씀
+
+유닉스나 리눅스os는 ssh를 내장함
+마이크로소프트사 vscode프로그램에서 ssh기능쓸수있음
+파이참도 ssh기능 쓸수 있음(상용도 있고 무료도 있음)
+vscode는 무료툴, 확장툴도 무료로 많음, 마소에서 배포함
+
+ssh서비스 - 원격서비스 - 텍스트를 서버로 전송 - 서버에서 텍스트로 가져옴
+vscode server를 pc로 다운받음
+vscode는 기본 ssh가 아니라 확장된 ssh서비스로 실행함
+
+타겟의 이전 vscode server를 삭제하고 다시 설치함
+
+id : soda
+pw : soda
+
+1. cmd 창 띠움
+2. 네트워크에서 이더넷의 ip4 주소를 끝자리를 101과 겹치지 않게 설정 (120으로)
+서브넷마크 : 255. 255. 255. 0
+3. ping 192.168.101.101 확인 (1ms 내로 안그러면 노이즈가 낀것임)
+4. ssh soda@192.168.101.101
+pw:soda
+
+ssh 접속이 안되면 아래의 파일 삭제후 다시접속
+C:\Users\PC-24\.ssh\known_hosts를 삭제하고 다시접속
+ctrl+b
+ctrl+d
+화면이 안넘어가는 단축키 위에 두개를 누름
+
+pwd
+rm -rf .vscode-server-insiders
+sudo rm -rf .vscode-server-insiders
+ls -l .vscode-oss/
+
+vscode에서 vs server를 찾기
+좌측 하단 ><버튼 누르고 현재창에서 주소입력
+select configured SSH host or enter user@host
+soda@192.168.101.101
+ssh soda@192.168.101.101
+
+위 둘중하나 명령어 입력
+pc-x86
+타겟-arm 프로세서
+
+터미널-뉴터미널하면 리눅스가 열림
+오픈폴더
+/home/soda/project/python폴더로 잡고 하위 파일(.py)생성후 코딩하면 됨
+중간중간 비밀번호는 soda
+
+vscode에서 디버그모드를 설정하려면 좌측의 아이콘 7개중에 모니터아이콘 밑에 네모칸4개
+아이콘을 클릭하고 python 패키지를 설치해야됨
+SSH:192.168.101.101을 접속한상태에서 Install in SSH:192.168.101.101을 누르면
+설치가 되어야 하는데 설치가 안되고 다음과 같은 에러 메시지가 출력된다.
+
+getaddrinfo ENOTFOUND ms-python.gallery.vsassets.io
+이걸 해결하기위해 선생님이 ms에 메일을 보냈다고함
+
+기존 vscode 버전이 낮아서 버전업을 시키고 python 플러그인을 장비에 설치해야됨
+1.54버전에서 1.55버전으로 업데이트 해야됨
+기존의 python 플러그인을 지움(서버를 지우고 다시설치-실행,디버깅가능한 플러그인)
+vscode도 다시 설치 해야됨
+vsserver는 vscode 버전이 바뀌면 삭제하고 다시 설치해야됨
+웹 브라우저에서 vscode 검색
+다운로드사이트로이동 자동인스톨러 다운하지말고 기타다운로드에서
+.zip파일 64bit 다운로드 받아야됨
+다운로드 폴더에서 확인
+다운받은 압축파일을 해제하기
+
+sodaIDE에 적용 해야됨
+C:\SodaIDE 의 resources폴더부터 아래 끝까지 삭제후 신버전을 복사해서 sodaIDE에 복사해서
+넣어야됨
+data, ext, locales폴더는 변경하면 안됨
+
+vscode실행 후 좌측 패키지 설치아이콘 선택후 python 선택후 uninstall누름
+reroad requst를 누름
+vscode에서 좌측 하단 ><클릭후 soda@192.168.101.101접속
+비번 soda입력
+접속 확인후에 패키지아이콘 클릭후 python선택후 장비에다가 install을 해야됨
+오픈폴더를 누르고 /home/soda/project/sprint01
+장비의 인터프리터를 선택하여 설정해야됨 3.7.3 32-bit버전
+
+장비의 pop 라이브러리를 클로저함수로 사용하기위해 xpop으로 상속받아 오버라이딩한다.
+xpop_teacher.py를 확인하여 부분상속과 super.포인터의 사용법을 숙지한다.
+
+MQTT브로커(서버)설치
+vscode에 접속하면 타겟에 자동접속하는데 파일-리모트해제를 선택하고
+터미널에서 pip 업그레이드한다.
+python -m pip install --upgrade pip
+내피씨에 mqtt 클라이언트를 설치한다.
+pip3 install paho-mqtt
+
+MQTT 통신 방식 설명 및 예제 설명
+문서확인

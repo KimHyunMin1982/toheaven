@@ -21,7 +21,7 @@ https://patentscope.wipo.int/search/ko/detail.jsf;jsessionid=52E751EAE4CF09D634B
 
 <세부 기능 구현>
 1. IP카메라를 연동해 화면을 띄워 실시간 상태를 파악한다. (RTSP를 통한 연결)
-   # RTSP(real-time streaming protocol) : 실시간으로 음성이나 동영상을 송수신하기 위한 통신 규약(프로토콜)을 말한다.
+   RTSP(real-time streaming protocol) : 실시간으로 음성이나 동영상을 송수신하기 위한 통신 규약(프로토콜)을 말한다.
 2. 환자의 심장박동을 1초당 측정하여 60초의 범위내의 값을 다 더한 후에 전체 심박수를 스마트폰 앱에 표시하여 준다.
    처음 측정 시는 1부터 60까지의 심박수를 리스트에 담아두고,
    60초 이상의 심박수 측정 시는 1초가 지날때마다 리스트의 0번인덱스를
